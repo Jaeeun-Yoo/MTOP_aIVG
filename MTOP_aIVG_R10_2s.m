@@ -9,7 +9,7 @@
 %  
 % --------------------------------------------------------------------
 % Compliance minimization with volume fraction constraint
-% Increasing penalization, Adaptive threshold projection filter
+% Continuation method(increasing penalty), Adaptive threshold projection filter
 %
 % Input parameter :
 % MTOP_aIVG_R10_2s(XL,YL,ZL,elem_size,FE_order,rmin_m,volfrac,data_N,DL_ratio,filter_id,penal_min,elem_type,ex_type,solver_type,logon_id)
@@ -20,7 +20,7 @@
 % volfrac : volume fraction (0~1)
 % data_N : IVG reducing variable number (0:No IVG)
 %          0 = no grouping
-%          1 = auto grouping
+%          1 = adaptive grouping
 %          N = fixed grouping number (target number is fixed, effective
 %          group number is changing )
 % DL_ratio : MTOP ratio , ex) when MTOP ratio of 3, number of density element
@@ -118,7 +118,7 @@ time_ansys=zeros(12,1);
 
 if data_N==0 % data_N==0 -> No isosurface variables grouping
     data_N2 = size(x_d,1);
-elseif data_N==1 % data_N==1 -> Auto group variable
+elseif data_N==1 % data_N==1 -> adaptive group variable
     data_N2 = round(size(x_d,1) * data_N_high_lim);
 else 
     data_N2 = data_N; % fixed group variable (effective variable num fixed)
