@@ -17,15 +17,3 @@ a     = zeros(m,1);       % Column vector with the constants a_i in the terms a_
 c_MMA = 1.0*10^5*ones(m,1);   % Column vector with the constants c_i in
 % c_MMA = 1.0*10^4*ones(m,1);   % Column vector with the constants c_i in  % update '19.11.09
 d     = zeros(m,1);       % Column vector with the constants d_i in the terms 0.5*d_i*(y_i)^2.
-
-%---  Ph.D. kang's code (IGA top)
-% 
-%       n=size(xval,1);
-%       
-%       m=1; a0=1; c=10000*ones(m,1); d=zeros(m,1); a=zeros(m,1);
-%       epsimin = 0.0000001;
-%       
-%       xold1=xval; xold2=xval;
-%       
-%       low   = xmin;
-%       upp   = xmax;

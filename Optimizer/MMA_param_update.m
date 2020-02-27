@@ -53,16 +53,3 @@ else
     end
 end
 
-
-
-%---  Ph.D. kang's code (IGA top)
-% 
-%       n=size(xval,1);
-%       
-%       m=1; a0=1; c=10000*ones(m,1); d=zeros(m,1); a=zeros(m,1);
-%       epsimin = 0.0000001;
-%       
-%       xold1=xval; xold2=xval;
-%       
-%       low   = xmin;
-%       upp   = xmax;
