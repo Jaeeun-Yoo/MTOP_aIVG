@@ -125,7 +125,8 @@ switch ex_type
                     for j=1:nely_d
                         for i=1:nelx_d
 %                             if j>=1 && j<=1/15*nely_d % Nguyen ex
-                            if j>=1 && j<=1/44*nely_d  % Zegard ex
+%                             if j>=1 && j<=1/44*nely_d  % Zegard ex
+                            if j>=1 && j<=1/22*nely_d  % Zegard ex, '20.08.09 modified
                                 x_nd_s_cnt=x_nd_s_cnt+1;
                                 x_nd_s_idx(j,i,k)=1;
                             end

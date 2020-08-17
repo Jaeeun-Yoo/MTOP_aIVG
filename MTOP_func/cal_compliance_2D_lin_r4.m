@@ -1,5 +1,5 @@
 %OBJECTIVE FUNCTION AND SENSITIVITY ANALYSIS
-function [f,gf]=cal_compliance_2D_lin_r4(x,nelx,nely,penal,U,E,E_min,DLTOP_ratio,I_mat)
+function [f,gf,c_elem]=cal_compliance_2D_lin_r4(x,nelx,nely,penal,U,E,E_min,DLTOP_ratio,I_mat)
 
 
 N_r=DLTOP_ratio;
@@ -55,10 +55,11 @@ dc_temp = -penal*(E-E_min)*x2(:).^(penal-1).*ce(:);
 
 dc = reshape(permute(reshape(dc_temp,nely,nelx,N_s,N_r),[3,1,4,2]),nely*N_s,nelx*N_r);
 
+c_elem = reshape(permute(reshape(c_elem_temp,nely,nelx,N_s,N_r),[3,1,4,2]),nely*N_s,nelx*N_r);
 
 f = c;
 gf = dc;
-
+%gf2 = dc2;
 
 
 
